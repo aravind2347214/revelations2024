@@ -1,12 +1,11 @@
 import React from 'react'
-import { InstagramIcon } from './icons'
 
 function Footer() {
   return (
     <div className='flex flex-row  w-full px-2 py-1 bg-[#000000ec] justify-center'>
         <div className='flex flex-row p-1 text-[12px] items-center px-2 gap-2  '>
             <img className='bg-blend-color-burn' src={require("../assets/christlogo.png")} width={30} height={30}  alt="" />
-            <div className='comic text-white'>{`CHRIST (Deemed to be university) PG Computer Science Dept`}
+            <div className='text-white comic'>{`CHRIST (Deemed to be university) PG Computer Science Dept`}
             </div>
         </div>
 
