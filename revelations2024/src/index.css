@@ -1,3 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=ComicNeue&display=swap');
+
+
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +14,206 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("../public//assets/bg-1.png");
+  /* filter: grayscale(2); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.bangers {
+  font-family: "Bangers", system-ui;
+  font-style: normal;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.example {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+
+.comic {
+  display:flex;
+  flex-wrap:wrap;
+  font-family:'Comic Sans', cursive;
+  padding:1vmin;
+}
+
+.panel {
+  background-color:#fff;
+  border:solid 3px #fff;
+  box-shadow:0 6px 6px -6px #000;
+  display:flex;
+  flex:1 1;
+  /* height:200px; */
+  margin:0.5vmin;
+  overflow:hidden;
+  position:relative;
+  filter: grayscale(1);
+  transition: filter 10s ease-in;
+}
+
+.panel:hover{
+  border:solid 3px #000;
+  filter: grayscale(0);
+
+
+}
+
+.text {
+  background-color:#fff;
+  border:solid 2px #000;
+  margin:0;
+  padding:3px 10px;
+}
+
+.top-left {
+  left:-6px;
+  position:absolute;
+  top:-2px;
+  transform:skew(-15deg);
+}
+
+.bottom-right {
+  bottom:-2px;
+  position:absolute;
+  right:-6px;
+  transform:skew(-15deg);
+}
+
+.speech {
+  background-color:#fff;
+  border:solid 2px #000;
+  border-radius:12px;
+  display:inline-block;
+  margin:.5em;
+  padding:.5em 1em;
+  position:relative;
+}
+
+.speech:before {
+  border:solid 12px transparent;
+  border-left:solid 12px #000;
+  border-top:solid 12px #000;
+  bottom:-24px;
+  content:"";
+  height:0;
+  left:24px;
+  position:absolute;
+  transform:skew(-15deg);
+  width:0;
+}
+
+.speech:after {
+  border:solid 10px transparent;
+  border-left:solid 10px #fff;
+  border-top:solid 10px #fff;
+  bottom:-19px;
+  content:"";
+  height:0;
+  left:27px;
+  position:absolute;
+  transform:skew(-15deg);
+  width:0;
+}
+
+.panel:nth-child(1) {
+  flex-basis: 400px;
+  background-color: #FF0707;
+}
+.panel:nth-child(2) {
+  flex-basis: 200px;
+  background-color: #efd421 ;
+}
+.panel:nth-child(3) {
+  flex-basis: 200px;
+  background-color:#1C19A8;
+}
+.panel:nth-child(4) {
+  flex-basis: 200px;
+  background-color: #FE7575;
+}
+.panel:nth-child(5) {
+  flex-basis: 200px;
+  background-color: #C818F4;
+}
+.panel:nth-child(6) {
+  flex-basis: 200px;
+  background-color: #ef1e3d;
+}
+.panel:nth-child(7) {
+  flex-basis: 200px;
+  background-color: #FC5D03;
+}
+
+
+/* background colours */
+
+/* .panel:nth-child(4n+1) {
+  background-image:radial-gradient(circle, yellow, orange);
+}
+
+.panel:nth-child(4n+2) {
+  background-image:radial-gradient(circle, lightblue, deepskyblue);
+}
+
+.panel:nth-child(4n+3) {
+  background-image:radial-gradient(circle, palegreen, yellowgreen);
+}
+
+.panel:nth-child(4n+4) {
+  background-image:radial-gradient(circle, lightcoral, tomato);
+} */
+
+
+.dottedbg{
+  background-image: url("assets/dottedbackground.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.retro-border{
+box-shadow: -10px 10px 0px 2px rgba(0,0,0,1);
+-webkit-box-shadow: -10px 10px 0px 2px rgba(0,0,0,1);
+-moz-box-shadow: -10px 10px 0px 2px rgba(0,0,0,1);
+margin-left: 20px;
+}
+
+
+
+
+.comic{
+  font-family: "Comic Neue", cursive;}
+
+.grayhover{
+  filter:grayscale(1);
+  transition: ease-in 1s;
+}
+
+.grayhover:hover{
+  filter:grayscale(1)
+}
+
+
+.color-animation{
+  animation: color-change 5s infinite ease-in-out;
+  
+  
+}
+@keyframes color-change {
+  0% { color: #fff;  }
+  25% { color: #ff385f;}
+  50% { color: #fdbe0e;}
+  75% { color: #ff385f;}
+  100% { color: #fff;}
 }

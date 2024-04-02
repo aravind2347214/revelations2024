@@ -1,25 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect } from 'react';
 import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import EventPage from './pages/EventPage';
+import ErrorPage from './pages/ErrorPage';
+import SchedulePage from './pages/SchedulePage';
+import OurTeamPage from './pages/OurTeamPage';
+import "aos/dist/aos.css"
+import  AOS from 'aos';
+
 
 function App() {
+  useEffect(()=>{
+    AOS.init();
+  },[])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<HomePage/>}/>
+      <Route path="/our-team" element={<OurTeamPage/>}/>
+      <Route path="/events" element={<EventPage/>}/>
+      <Route path="/schedule" element={<SchedulePage/>}/>
+      <Route path ="*" element={<ErrorPage/>}/>
+    </Routes>
+  </BrowserRouter>
   );
 }
 
